@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFMG Student Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="https://www.ifmg.edu.br/governadorvaladares" target="_blank" >
+            <img src="/images/Image from IFMG.png" alt="Logo Light" class="logo logo-light">
+            <img src="/images/IFMG Campus Logo.png" alt="Logo Dark" class="logo logo-dark">
+        </a>
+    </header>    
+
+    <main>
+        <div class="chat-container">
+            <div class="chat-header">
+                IFMG Handbook
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+
+                        <img src="/images/Avatar illustration.png" alt="Bot" class="profile-pic">
+
+                    <div>
+                        <div class="message-content">
+                            Olá! Estou aqui para lhe guiar em suar jornada no IFMG!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-area">
+                <select id="questionSelect">
+                    <option value="">Choose a question...</option>
+                    <option value="testRepose">How do I ask for a test repose?</option>
+                    <option value="library">How can I access the library?</option>
+                    <option value="schedule">Where can I find my class schedule?</option>
+                    <option value="advisorMeeting">How do I schedule a meeting with my advisor?</option>
+                </select>
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2024 IFMG Student Assistant | Made by <i>Leandro Maia</i>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
