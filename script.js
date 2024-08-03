@@ -30,10 +30,7 @@
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', className);
             
-            const profilePic = document.createElement('img');
-            profilePic.src = className === 'user-message' ? '/images/Avatar illustration.png' : '/images/Avatar illustration.png';
-            profilePic.alt = className === 'user-message' ? 'User' : 'Bot';
-            profilePic.classList.add('profile-pic');
+            
             
             const contentDiv = document.createElement('div');
             
@@ -50,9 +47,9 @@
             
             if (className === 'user-message') {
                 messageDiv.appendChild(contentDiv);
-                messageDiv.appendChild(profilePic);
+
             } else {
-                messageDiv.appendChild(profilePic);
+
                 messageDiv.appendChild(contentDiv);
             }
             

@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #32A03E;
     --bg-color: #f0f0f0;
@@ -41,26 +40,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .logo {
     height: 50px;
-    display: none; /* Hide both logos by default */
+    display: none;
 }
 
 .logo-light {
-    display: block; /* Show light logo in light mode */
+    display: block;
 }
 
 .dark-mode .logo-light {
-    display: none; /* Hide light logo in dark mode */
+    display: none;
 }
 
 .dark-mode .logo-dark {
-    display: block; /* Show dark logo in dark mode */
+    display: block;
 }
-
 
 #darkModeToggle {
     background-color: transparent;
@@ -85,7 +82,6 @@ main {
     padding: 20px;
 }
 
-/* Keyframes for the initial green glow */
 @keyframes glow {
     0% {
         box-shadow: 0 0 30px rgba(50, 160, 63, 0.103), 
@@ -100,11 +96,10 @@ main {
     100% {
         box-shadow: 0 0 30px rgba(27, 82, 33, 0.092), 
                     0 0 60px rgba(50, 160, 62, 0.1), 
-                    0 0 100px rgba(50, 160, 62, 0.05);
+                    0 0 200px rgba(50, 160, 62, 0.05);
     }
 }
 
-/* Typing indicator style */
 .typing-indicator {
     display: flex;
     align-items: center;
@@ -130,24 +125,15 @@ main {
     animation: typing 1s infinite;
 }
 
-/* Keyframes for the typing animation */
 @keyframes typing {
-    0% {
-        opacity: 0.2;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.2;
-    }
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
 }
 
-/* Apply the gradient background glow during the typing phase */
 .typing-phase {
     animation: backgroundGlow 5s infinite;
 }
-
 
 .chat-container {
     width: 90%;
@@ -168,8 +154,6 @@ main {
     transition: all 0.3s ease;
 }
 
-
-
 .chat-container::before {
     content: '';
     position: absolute;
@@ -183,11 +167,35 @@ main {
 }
 
 .chat-header {
-    color: var(--bot-msg-color);
+    color: var(--text-color);
     padding: 20px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.chat-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .chat-messages {
@@ -211,47 +219,44 @@ main {
     transition: box-shadow 0.3s;
 }
 
-/* User Message Styles */
 .user-message {
-    margin-left: auto; /* Align user message to the right */
-    flex-direction: row-reverse; /* Reverse the order of profile pic and message content */
+    flex-direction: row-reverse;
+    margin-left: auto;
 }
 
 .user-message .profile-pic {
-    margin-left: 10px; /* Space between profile pic and message content */
+    margin-left: 10px;
+    order: 1;
 }
 
 .user-message .message-content {
     background-color: var(--user-msg-bg);
     color: var(--user-msg-color);
-    margin-left: 10px;
-}
-
-.user-message .time {
-    margin-right: 10px; /* Space between message and timestamp */
-    text-align: right; /* Align timestamp text to the right */
-    order: -1; /* Position timestamp before message content */
-}
-
-/* Bot Message Styles */
-.bot-message {
-    margin-right: auto; /* Align bot message to the left */
-    flex-direction: row; /* Profile pic and message content in normal order */
-}
-
-.bot-message .profile-pic {
-    margin-right: 10px; /* Space between profile pic and message content */
-}
-
-.bot-message .message-content {
-    background-color: var(--bot-msg-bg);
     margin-right: 10px;
 }
 
+.user-message .time {
+    margin-right: 10px;
+    text-align: right;
+    order: 2;
+}
+
+.bot-message {
+    margin-right: auto;
+    flex-direction: row;
+}
+
+
+
+.bot-message .message-content {
+    background-color: var(--bot-msg-bg);
+    margin-left: 10px;
+}
+
 .bot-message .time {
-    margin-left: 10px; /* Space between message and timestamp */
-    text-align: left; /* Align timestamp text to the left */
-    order: 1; /* Position timestamp after message content */
+    margin-left: 10px;
+    text-align: left;
+    order: 1;
 }
 
 .profile-pic {
@@ -271,7 +276,6 @@ main {
     color: #888;
     margin-top: 5px;
 }
-
 
 .input-area {
     display: flex;
@@ -306,6 +310,8 @@ main {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
+    white-space: nowrap;
+    min-width: 80px;
 }
 
 #sendButton:hover {
@@ -330,4 +336,52 @@ footer a {
 footer a:hover {
     opacity: 0.8;
 }
-  
+
+@media screen and (max-width: 780px) {
+    
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .user-message .profile-pic {
+        margin-right: 12px;
+
+    }
+
+    .chat-container {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-header {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    #questionSelect {
+        margin-bottom: 10px;
+        width: 100%;
+        min-width: 200px;
+    }
+
+    #sendButton {
+        width: 100%;
+        margin-left: 0;
+        min-width: 200px;
+    }
+    footer {
+        flex-shrink: 0;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+
+}
