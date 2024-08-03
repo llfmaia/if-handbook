@@ -2,13 +2,13 @@
         const chatMessages = document.getElementById('chatMessages');
         const questionSelect = document.getElementById('questionSelect');
         const sendButton = document.getElementById('sendButton');
-        const darkModeToggle = document.getElementById('darkModeToggle');
-
+        
+        
         const answers = {
             testRepose: "To request a test repose, you need to submit a formal request to your professor within 48 hours of the original test date. Provide a valid reason and any supporting documentation if available.",
             library: "You can access the library using your student ID card. The library is open Monday to Friday from 8 AM to 8 PM, and on Saturdays from 9 AM to 1 PM.",
             schedule: "Your class schedule can be found on the IFMG student portal. Log in with your credentials, navigate to 'Academic Information', and select 'Class Schedule'.",
-            advisorMeeting: "To schedule a meeting with your advisor, use the online appointment system on the IFMG website. Go to 'Student Services', then 'Advising', and follow the prompts to book an available time slot."
+            advisorMeeting: "To schedule a meeting with your advisor, use the online appointment system on the IFMG website. Go to 'Student Services', then 'Advising', and follow the prompts to book an available time slot.",
         };
 
         sendButton.addEventListener('click', () => {
@@ -57,7 +57,6 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        const DarkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
         
         function setDarkMode(isDark) {
@@ -90,11 +89,5 @@
         prefersDarkScheme.addEventListener('change', event => {
             setDarkMode(event.matches);
         });
-        
-        // Toggle button event listener
-        DarkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            toggleLogos(body.classList.contains('dark-mode'));
-        });
-        
+    
         
