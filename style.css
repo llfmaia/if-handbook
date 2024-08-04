@@ -1,3 +1,4 @@
+/* Paleta de cores Light Mode */
 :root {
     --primary-color: #32A03E;
     --bg-color: #f0f0f0;
@@ -10,6 +11,7 @@
     --input-border: #ced4da;
 }
 
+/* Paleta de cores modo Escuro */
 .dark-mode {
     --bg-color: #1a1a1a;
     --text-color: #f0f0f0;
@@ -59,21 +61,6 @@ header {
     display: block;
 }
 
-#darkModeToggle {
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-#darkModeToggle:hover {
-    background-color: white;
-    color: var(--primary-color);
-}
-
 main {
     flex-grow: 1;
     display: flex;
@@ -98,41 +85,6 @@ main {
                     0 0 60px rgba(50, 160, 62, 0.1), 
                     0 0 200px rgba(50, 160, 62, 0.05);
     }
-}
-
-.typing-indicator {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.typing-indicator::before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #999;
-    animation: typing 1s infinite;
-}
-
-.typing-indicator::after {
-    content: '...';
-    display: inline-block;
-    font-size: 1.2em;
-    margin-left: 5px;
-    color: #999;
-    animation: typing 1s infinite;
-}
-
-@keyframes typing {
-    0% { opacity: 0.2; }
-    50% { opacity: 1; }
-    100% { opacity: 0.2; }
-}
-
-.typing-phase {
-    animation: backgroundGlow 5s infinite;
 }
 
 .chat-container {
@@ -378,7 +330,7 @@ footer a:hover {
         min-width: 200px;
     }
     footer {
-        flex-shrink: 0;
+        flex-shrink: 1;
         padding: 5px;
         font-size: 12px;
     }

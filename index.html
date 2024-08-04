@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Definição do conjunto de caracteres e viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFMG Student Assistant</title>
+    <!-- Link para o arquivo CSS e ícone da aba -->
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="">
 </head>
 <body>
     <header>
-        <a href="https://www.ifmg.edu.br/governadorvaladares" target="_blank" >
-            <img src="/images/Image from IFMG.png" alt="Logo Light" class="logo logo-light">
-            <img src="/images/IFMG Campus Logo.png" alt="Logo Dark" class="logo logo-dark">
+        <!-- Logo do IFMG com link para o site oficial -->
+        <a href="https://www.ifmg.edu.br/governadorvaladares" target="_blank">
+            <img src="/images/ifmg-logo-light.png" alt="Logo Light" class="logo logo-light">
+            <img src="/images/ifmg-logo-dark.png" alt="Logo Dark" class="logo logo-dark">
         </a>
     </header>    
 
     <main>
+        <!-- Contêiner do chat -->
         <div class="chat-container">
             <div class="chat-header">
                 IFMG Handbook
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="message bot-message">
-
-                       
-
+                    <!-- Mensagem inicial do assistente -->
                     <div>
                         <div class="message-content">
                             Olá! Estou aqui para lhe guiar em sua jornada no IFMG!
@@ -33,21 +35,24 @@
                 </div>
             </div>
             <div class="input-area">
+                <!-- Área de seleção de perguntas -->
                 <select id="questionSelect">
-                    <option value="">Choose a question...</option>
-                    <option value="testRepose">How do I ask for a test repose?</option>
-                    <option value="library">How can I access the library?</option>
-                    <option value="schedule">Where can I find my class schedule?</option>
-                    <option value="advisorMeeting">How do I schedule a meeting with my advisor?</option>
+                    <option value="">Escolha uma pergunta...</option>
+                    <option value="testRepose">Como pedir uma nova data para a prova?</option>
+                    <option value="library">Como posso acessar a biblioteca?</option>
+                    <option value="schedule">Onde posso encontrar meu horário de aulas?</option>
+                    <option value="advisorMeeting">Como agendar uma reunião com meu orientador?</option>
                 </select>
-                <button id="sendButton">Send</button>
+                <button id="sendButton">Enviar</button>
             </div>
         </div>
     </main>
 
     <footer>
-        © 2024 IFMG-GV Handbook | Idealized by <i>Leandro Maia</i>
+        <!-- Rodapé com direitos autorais -->
+        © 2024 IFMG-GV Handbook | Idealizado por <i>Leandro Maia</i>
     </footer>
-<script src="script.js"></script>
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
