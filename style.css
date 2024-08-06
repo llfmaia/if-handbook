@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
 /* Paleta de cores Light Mode */
 :root {
     --primary-color: #32A03E;
@@ -9,6 +12,7 @@
     --user-msg-color: white;
     --input-bg: #f8f9fa;
     --input-border: #ced4da;
+    --input-color: rgb(30, 113, 6) ;
 }
 
 /* Paleta de cores modo Escuro */
@@ -24,8 +28,9 @@
 }
 
 body {
-    font-family: Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
+    animation: glow 3s infinite alternate, backgroundGlow 7s infinite;
+    font-family: Helvetica,Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -90,17 +95,17 @@ main {
 .chat-container {
     width: 90%;
     max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(110,110, 110, 0.2);
+    backdrop-filter: blur(5px) saturate(160%);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
+    border-radius: 5mm;
     box-shadow: 0 0 30px rgba(50, 160, 62, 0.2), 
                 0 0 60px rgba(50, 160, 62, 0.1), 
                 0 0 100px rgba(50, 160, 62, 0.05);
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    animation: glow 3s infinite alternate, backgroundGlow 10s infinite;
+    border: 0.5mm solid rgba(110, 110, 110, 0.2);
+    animation: glow 3s infinite alternate, backgroundGlow 7s infinite;
     background: linear-gradient(135deg, rgba(50, 160, 62, 0.2), rgba(50, 160, 62, 0.1), rgba(50, 160, 62, 0.05));
     background-size: 200% 200%;
     transition: all 0.3s ease;
@@ -123,7 +128,9 @@ main {
     padding: 20px;
     text-align: center;
     font-size: 24px;
-    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    font-style: normal;
     position: relative;
     overflow: hidden;
 }
@@ -253,7 +260,7 @@ main {
 }
 
 #sendButton {
-    padding: 12px 24px;
+    /* padding: 12px 24px;
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -263,7 +270,20 @@ main {
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
     white-space: nowrap;
+    min-width: 80px; */
+    padding: 12px 24px;
+    white-space: nowrap;
+    background: var(--input-color);
+    color: white;
     min-width: 80px;
+    margin-left: 10px;
+    border: 0.5mm solid black;
+    border-radius: 5mm;
+    box-shadow: 3px 3px 0 black;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
 #sendButton:hover {
