@@ -58,6 +58,7 @@ header {
     display: block;
 }
 
+
 .dark-mode .logo-light {
     display: none;
 }
@@ -178,6 +179,23 @@ main {
     transition: box-shadow 0.3s;
 }
 
+.message-link {
+    margin-top: 8px;
+    font-size: 0.9em;
+}
+
+.message-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.message-link a:hover {
+    color: #2b8934;
+    text-decoration: underline;
+}
+
 .user-message {
     flex-direction: row-reverse;
     margin-left: auto;
@@ -194,28 +212,51 @@ main {
     margin-right: 10px;
 }
 
-.user-message .time {
-    margin-right: 10px;
-    text-align: right;
-    order: 2;
-}
-
 .bot-message {
     margin-right: auto;
     flex-direction: row;
 }
 
+.video-container {
+    margin-top: 10px;
+}
 
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-caption {
+    font-size: 0.9em;
+    color: #8E8E93;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.link-preview {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #F2F2F7;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.link-description {
+    font-size: 0.9em;
+    color: #8E8E93;
+}
 
 .bot-message .message-content {
     background-color: var(--bot-msg-bg);
     margin-left: 10px;
-}
-
-.bot-message .time {
-    margin-left: 10px;
-    text-align: left;
-    order: 1;
 }
 
 .profile-pic {
@@ -228,12 +269,6 @@ main {
 
 .profile-pic:hover {
     transform: scale(1.1);
-}
-
-.time {
-    font-size: 0.75em;
-    color: #888;
-    margin-top: 5px;
 }
 
 .input-area {
