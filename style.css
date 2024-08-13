@@ -227,6 +227,62 @@ main {
     overflow: hidden;
 }
 
+.image-container {
+    margin-top: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+/* style.css */
+
+/* Fullscreen image styles */
+/* Fullscreen image container */
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Animate image */
+.animate-image {
+    max-width: 60%;  /* Resize the image to occupy 60% of the screen */
+    max-height: 80%; /* Maintain aspect ratio while limiting height */
+    transform: scale(0.8);  /* Start scaled down */
+    transition: transform 0.3s ease, opacity 0.3s ease;  /* Smooth scaling */
+}
+
+/* Style the close button (X) */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-button:hover {
+    color: red;
+}
+
 .video-caption {
     font-size: 0.9em;
     color: #8E8E93;
@@ -296,7 +352,7 @@ main {
 
 #sendButton {
     /* padding: 12px 24px;
-    background-color: var(--primary-color);
+    backgrounfd-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 25px;
@@ -377,6 +433,7 @@ footer a:hover {
         margin-bottom: 10px;
         width: 100%;
         min-width: 200px;
+        
     }
 
     #sendButton {
