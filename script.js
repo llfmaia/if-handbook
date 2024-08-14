@@ -26,8 +26,8 @@ const answers = {
     },
     library: {
         text: "Você pode acessar a biblioteca usando seu cartão de estudante. A biblioteca está aberta de segunda a sexta das 8h às 20h e aos sábados das 9h às 13h.",
-        link: null,
-        linkCaption: null,
+        link: "https://example.com/new-test-request",
+        linkCaption: "Clique aqui",
         video: "https://example.com/library-tour.mp4",
         caption: "Tour virtual da biblioteca",
     },
@@ -96,19 +96,6 @@ function addMessage(response, className) {
     textDiv.textContent = response.text;
     contentDiv.appendChild(textDiv);
 
-    if (response.link) {
-        const linkDiv = document.createElement('div');
-        linkDiv.classList.add('message-link');
-
-        const linkElement = document.createElement('a');
-        linkElement.href = response.link;
-        linkElement.textContent = response.linkCaption;  
-        linkElement.target = '_blank';  
-
-        linkDiv.appendChild(linkElement);
-        contentDiv.appendChild(linkDiv);
-    }
-    
     if (response.video) {
         const videoContainer = document.createElement('div');
         videoContainer.classList.add('video-container');
@@ -136,10 +123,22 @@ function addMessage(response, className) {
         imageElement.classList.add('clickable-image')
         imageElement.src = response.image;
         imageContainer.appendChild(imageElement);
-
         contentDiv.appendChild(imageContainer)
     }
 
+    if (response.link) {
+        const linkDiv = document.createElement('div');
+        linkDiv.classList.add('message-link');
+
+        const linkElement = document.createElement('a');
+        linkElement.href = response.link;
+        linkElement.textContent = response.linkCaption;  
+        linkElement.target = '_blank';  
+
+        linkDiv.appendChild(linkElement);
+        contentDiv.appendChild(linkDiv);
+    }
+    
     messageDiv.appendChild(contentDiv);
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
