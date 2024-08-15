@@ -4,48 +4,13 @@
 //  Created Date: 2/09/2024
 //________________________________________________________
 
-// Seleciona o elemento de mensagens do chat
+import { answers } from "./model/answers.js";
+
 const chatMessages = document.getElementById('chatMessages');
-
-// Seleciona o elemento de seleção de perguntas
 const questionSelect = document.getElementById('questionSelect');
-
-// Seleciona o botão de enviar
 const sendButton = document.getElementById('sendButton');
 const body = document.body;
 
-// Objeto com respostas predefinidas para diferentes perguntas
-const answers = {
-    testRepose: {
-        text: "Para solicitar uma nova prova, você precisa enviar um pedido formal ao seu professor dentro de 48 horas após a data original da prova.",
-        link: "https://example.com/new-test-request",
-        linkCaption: "Teste",  // Link added here
-        video: null,
-        caption: null,
-        image: "./assets/images/protocolo.png"
-    },
-    library: {
-        text: "Você pode acessar a biblioteca usando seu cartão de estudante. A biblioteca está aberta de segunda a sexta das 8h às 20h e aos sábados das 9h às 13h.",
-        link: "https://example.com/new-test-request",
-        linkCaption: "Clique aqui",
-        video: "https://example.com/library-tour.mp4",
-        caption: "Tour virtual da biblioteca",
-    },
-    schedule: {
-        text: "O seu horário de aulas pode ser encontrado no portal do estudante do IFMG.",
-        link: "https://ifmg.example.com/student-portal",  // Link added here
-        video: null,
-        linkCaption: null,
-        caption: null
-    },
-    advisorMeeting: {
-        text: "Para agendar uma reunião com seu orientador, use o sistema de agendamento online no site do IFMG.",
-        link: "https://example.com/advisor-meeting",
-        linkCaption: null,  // Link added here
-        video: "https://example.com/advisor-meeting-tutorial.mp4",
-        caption: "Tutorial: Agendando uma reunião"
-    },
-};
 
 // Adiciona um evento ao botão de enviar que é ativado ao ser clicado
 sendButton.addEventListener('click', () => {
@@ -147,25 +112,16 @@ function addMessage(response, className) {
 
 // Função para configurar o modo escuro ou claro
 function setDarkMode(isDark) {
-    if (isDark) {
-        // Adiciona a classe de modo escuro ao corpo
-        body.classList.add('dark-mode');
-    } else {
-        // Remove a classe de modo escuro do corpo
-        body.classList.remove('dark-mode');
-    }
-    // Alterna a visibilidade dos logos
-    toggleLogos(isDark);
-}
-
-// Função para alternar a visibilidade dos logos dependendo do modo
-function toggleLogos(isDark) {
     const logoLight = document.querySelector('.logo-light');
     const logoDark = document.querySelector('.logo-dark');
     if (isDark) {
+        // Adiciona a classe de modo escuro ao corpo
+        body.classList.add('dark-mode');
         logoLight.style.display = 'none';
         logoDark.style.display = 'block';
     } else {
+        // Remove a classe de modo escuro do corpo
+        body.classList.remove('dark-mode');
         logoLight.style.display = 'block';
         logoDark.style.display = 'none';
     }
@@ -181,7 +137,6 @@ prefersDarkScheme.addEventListener('change', event => {
 });
 
 
-// Function to handle image click for full-screen mode
 // Function to handle image click for full-screen mode
 function enableFullScreenOnClick() {
     const images = document.querySelectorAll('.clickable-image');
