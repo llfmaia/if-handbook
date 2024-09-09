@@ -61,6 +61,15 @@ function addMessage(response, className) {
     textDiv.textContent = response.text;
     contentDiv.appendChild(textDiv);
 
+    if (className === "bot-message") {
+        const profilePic = document.createElement('img');
+        profilePic.src = './assets/images/bot-img.png'
+        profilePic.classList.add('profile-pic')
+        messageDiv.appendChild(profilePic)
+    }
+
+
+
     if (response.video) {
         const videoContainer = document.createElement('div');
         videoContainer.classList.add('video-container');

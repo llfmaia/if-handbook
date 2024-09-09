@@ -201,10 +201,6 @@ main {
     margin-left: auto;
 }
 
-.user-message .profile-pic {
-    margin-left: 10px;
-    order: 1;
-}
 
 .user-message .message-content {
     background-color: var(--user-msg-bg);
@@ -215,6 +211,14 @@ main {
 .bot-message {
     margin-right: auto;
     flex-direction: row;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px ;
 }
 
 .video-container {
@@ -315,17 +319,6 @@ main {
     margin-left: 10px;
 }
 
-.profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-}
 
 .input-area {
     display: flex;

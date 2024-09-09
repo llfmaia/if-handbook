@@ -11,7 +11,7 @@ export const answers = {
         text: "Você pode acessar a biblioteca usando seu cartão de estudante. A biblioteca está aberta de segunda a sexta das 8h às 20h e aos sábados das 9h às 13h.",
         link: "https://example.com/new-test-request",
         linkCaption: "Clique aqui",
-        video: "https://example.com/library-tour.mp4",
+        video: "../assets/video/teste-video.mov",
         caption: "Tour virtual da biblioteca"
     },
     schedule: {
@@ -27,5 +27,6 @@ export const answers = {
         linkCaption: null,
         video: "https://example.com/advisor-meeting-tutorial.mp4",
         caption: "Tutorial: Agendando uma reunião"
-    }
+    },
+
 };
