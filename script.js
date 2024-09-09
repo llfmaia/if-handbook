@@ -174,7 +174,9 @@ function enableFullScreenOnClick() {
                 fullScreenDiv.style.opacity = '0';
                 setTimeout(() => {
                     document.body.removeChild(fullScreenDiv);
+                    document.body.removeChild(imgElement);
                 }, 300); // Wait for animation to complete before removing
+                return
             });
 
             // Add event listener for the Escape key
@@ -202,4 +204,3 @@ function enableFullScreenOnClick() {
 }
 
 // Call the function to activate full-screen feature
-enableFullScreenOnClick();  
