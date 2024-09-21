@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-brq">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9H4DSTM2Z"></script>
@@ -28,34 +28,33 @@
     </header>    
 
     <main>
-        <div class="chat-container">
-            <div class="chat-header">
-                IFMG <i>Handbook</i>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot-message">
-                    <!-- Mensagem inicial do assistente -->
-                    <div>
-                        <div class="message-content">
-                            Olá! Estou aqui para lhe guiar em sua jornada no IFMG!
+            <div class="chat-container">
+                <div class="chat-header">
+                    IFMG <i>Handbook</i>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <!-- Mensagem inicial do assistente -->
+                        <div>
+                            <div class="message-content">
+                                Olá! Estou aqui para lhe guiar em sua jornada no IFMG!
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="input-area">
+                    <!-- Área de seleção de perguntas -->
+                    <select id="questionSelect">
+                        <option value="">Escolha uma pergunta...</option>
+                        <option value="testRepose">Como pedir uma nova data para a prova?</option>
+                        <option value="library">Como posso acessar a biblioteca?</option>
+                        <option value="schedule">Onde posso encontrar meu horário de aulas?</option>
+                        <option value="advisorMeeting">Como agendar uma reunião com meu orientador?</option>
+                    </select>
+                    <button id="sendButton">Enviar</button>
+                </div>
             </div>
-            <div class="input-area">
-                <!-- Área de seleção de perguntas -->
-                <select id="questionSelect">
-                    <option value="">Escolha uma pergunta...</option>
-                    <option value="testRepose">Como pedir uma nova data para a prova?</option>
-                    <option value="library">Como posso acessar a biblioteca?</option>
-                    <option value="schedule">Onde posso encontrar meu horário de aulas?</option>
-                    <option value="advisorMeeting">Como agendar uma reunião com meu orientador?</option>
-                </select>
-                <button id="sendButton">Enviar</button>
-            </div>
-        </div>
     </main>
-
     <footer>
         <!-- Rodapé com direitos autorais -->
         © 2024 IFMG-GV Handbook | Idealizado por <i>Leandro Maia</i>
