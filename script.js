@@ -96,6 +96,7 @@ function addMessage(response, className) {
         const imageElement = document.createElement("img")
         imageElement.classList.add('clickable-image')
         imageElement.src = response.image;
+        imageElement.decoding = "auto"
         imageContainer.appendChild(imageElement);
         contentDiv.appendChild(imageContainer)
     }
