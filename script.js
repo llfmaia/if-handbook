@@ -113,6 +113,19 @@ function addMessage(response, className) {
         linkDiv.appendChild(linkElement);
         contentDiv.appendChild(linkDiv);
     }
+
+    if (response.downloadLink) {
+        const linkDiv = document.createElement("div")
+        linkDiv.classList.add('message-link')
+
+        const linkElement = document.createElement('a')
+        linkElement.download = "test"
+        linkElement.textContent = response.linkCaptionDownload;  
+        linkElement.href = response.downloadLink
+
+        linkDiv.appendChild(linkElement);
+        contentDiv.appendChild(linkDiv);
+    }
     
     messageDiv.appendChild(contentDiv);
     chatMessages.appendChild(messageDiv);

@@ -15,11 +15,13 @@ export const answers = {
         caption: "Tour virtual da biblioteca"
     },
     schedule: {
-        text: "O seu horário de aulas pode ser encontrado no portal do estudante do IFMG.",
-        link: "https://ifmg.example.com/student-portal",
+        text: "O seu horário de aulas pode ser encontrado no portal do estudante do IFMG no link abaixo, ou você pode fazer o download por aqui",
+        link: "https://www.ifmg.edu.br/governadorvaladares/ensino/horarios-de-aulas/tecnicos/quadro-de-horarios-tecnicos-integrados-ano-atual.pdf/view",
         video: null,
-        linkCaption: null,
-        caption: null
+        linkCaption: "Clique aqui para acessar o portal do IFMG",
+        caption: null,
+        linkCaptionDownload: "Clique aqui para baixar o horário",   
+        downloadLink: "../assets/downloadable_files/horario.pdf"
     },
     advisorMeeting: {
         text: "Para agendar uma reunião com seu orientador, use o sistema de agendamento online no site do IFMG.",
