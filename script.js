@@ -75,14 +75,14 @@ function addMessage(response, className) {
         videoContainer.classList.add('video-container');
         
         const videoElement = document.createElement('video');
-        videoElement.src = response.video;
+        videoElement.src = response.video.content;
         videoElement.controls = true;
         videoContainer.appendChild(videoElement);
         
         if (response.caption) {
             const captionElement = document.createElement('div');
             captionElement.classList.add('video-caption');
-            captionElement.textContent = response.caption;
+            captionElement.textContent = response.video.caption;
             videoContainer.appendChild(captionElement);
         }
         
@@ -106,22 +106,22 @@ function addMessage(response, className) {
         linkDiv.classList.add('message-link');
 
         const linkElement = document.createElement('a');
-        linkElement.href = response.link;
-        linkElement.textContent = response.linkCaption;  
+        linkElement.href = response.link.content;
+        linkElement.textContent = response.link.caption;  
         linkElement.target = '_blank';  
 
         linkDiv.appendChild(linkElement);
         contentDiv.appendChild(linkDiv);
     }
 
-    if (response.downloadLink) {
+    if (response.download) {
         const linkDiv = document.createElement("div")
         linkDiv.classList.add('message-link')
 
         const linkElement = document.createElement('a')
-        linkElement.download = response.downloadFileName
-        linkElement.textContent = response.linkCaptionDownload;  
-        linkElement.href = response.downloadLink
+        linkElement.href = response.download.link
+        linkElement.textContent = response.download.caption;  
+        linkElement.download = response.download.file_name
 
         linkDiv.appendChild(linkElement);
         contentDiv.appendChild(linkDiv);
