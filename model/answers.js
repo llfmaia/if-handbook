@@ -21,7 +21,8 @@ export const answers = {
         linkCaption: "Clique aqui para acessar o portal do IFMG",
         caption: null,
         linkCaptionDownload: "Clique aqui para baixar o horário",   
-        downloadLink: "../assets/downloadable_files/horario.pdf"
+        downloadLink: "../assets/downloadable_files/horario.pdf",
+        downloadFileName: "horario-2024"
     },
     advisorMeeting: {
         text: "Para agendar uma reunião com seu orientador, use o sistema de agendamento online no site do IFMG.",
