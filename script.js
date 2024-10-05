@@ -265,7 +265,7 @@ function enableFullScreenOnClick() {
             // Trigger the animation after adding to the DOM
             setTimeout(() => {
                 fullScreenDiv.style.opacity = '1';
-                imgElement.style.transform = 'scale(1)';
+                imgElement.style.transform = 'scale(1.4)';
             }, 0);
         });
     });
