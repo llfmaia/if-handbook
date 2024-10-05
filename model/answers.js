@@ -5,7 +5,10 @@ export const answers = {
             content : "https://example.com/new-test-request",
             caption: "Teste",
         },
-        image: "./assets/images/protocolo.png"
+        image: [
+            "../assets/images/protocolo.png",
+            "../assets/images/protocolo-1.png"
+        ]
     },
     library: {
         text: "Você pode acessar a biblioteca usando seu cartão de estudante. A biblioteca está aberta de segunda a sexta das 8h às 20h e aos sábados das 9h às 13h.",

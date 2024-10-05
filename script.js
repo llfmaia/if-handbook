@@ -91,16 +91,70 @@ function addMessage(response, className) {
 
     if (response.image) {
         const imageContainer = document.createElement("div");
-        imageContainer.classList.add('image-container');
+        imageContainer.classList.add('slideshow-container');  // Slideshow container
+    
+        let slideIndex = 0; // Initialize slide index
         
-        const imageElement = document.createElement("img")
-        imageElement.classList.add('clickable-image')
-        imageElement.src = response.image;
-        imageElement.decoding = "auto"
-        imageContainer.appendChild(imageElement);
-        contentDiv.appendChild(imageContainer)
-    }
+        // Create previous and next buttons for the slideshow
 
+        const prevButton = document.createElement("a");
+        prevButton.classList.add('prev');
+        prevButton.innerHTML = "&#10094;";  // Left arrow for previous
+        prevButton.onclick = () => changeSlide(-1);  // Call to change slides
+    
+        const nextButton = document.createElement("a");
+        nextButton.classList.add('next');
+        nextButton.innerHTML = "&#10095;";  // Right arrow for next
+        nextButton.onclick = () => changeSlide(1);  // Call to change slides
+            
+
+        // Dynamically generate and append images as slides
+        response.image.forEach(generateSlides);
+        
+        function generateSlides(img) {
+            const slideDiv = document.createElement("div");
+            slideDiv.classList.add('mySlide', 'fade');  // Add slide and fade effect
+            
+            const imageElement = document.createElement("img");
+            imageElement.classList.add('clickable-image');
+            imageElement.src = img;
+            imageElement.decoding = "auto";
+            
+            slideDiv.appendChild(imageElement);  // Append image to slide
+            imageContainer.appendChild(slideDiv);  // Append slide to the container
+        }
+        
+        if (response.image[1]) {
+            imageContainer.appendChild(prevButton);  // Append previous button to container
+            imageContainer.appendChild(nextButton);  // Append next button to container
+        }
+        
+        contentDiv.appendChild(imageContainer);  // Add the entire slideshow container to the content
+    
+        // Display the first slide
+        showSlides(slideIndex);
+    
+        // Function to change slides
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        // Function to display slides
+        function showSlides(n) {
+            const slides = imageContainer.getElementsByClassName("mySlide");
+            if (n >= slides.length) { slideIndex = 0 }  // Loop back to the first slide
+            if (n < 0) { slideIndex = slides.length - 1 }  // Loop to the last slide
+    
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+    
+            // Show the active slide
+            slides[slideIndex].style.display = "block";
+        }
+    }
+    
     if (response.link) {
         const linkDiv = document.createElement('div');
         linkDiv.classList.add('message-link');
@@ -216,5 +270,3 @@ function enableFullScreenOnClick() {
         });
     });
 }
-
-// Call the function to activate full-screen feature
