@@ -106,7 +106,7 @@ function addMessage(response, className) {
         nextButton.classList.add('next');
         nextButton.innerHTML = "&#10095;";  // Right arrow for next
         nextButton.onclick = () => changeSlide(1);  // Call to change slides
-            
+       
 
         // Dynamically generate and append images as slides
         response.image.forEach(generateSlides);
