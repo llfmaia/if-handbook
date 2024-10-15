@@ -26,14 +26,15 @@ export const answers = {
     schedule: {
         text: "O seu horário de aulas pode ser encontrado no portal do estudante do IFMG no link abaixo, ou você pode fazer o download por aqui",
         link: {
-            content : "https://www.ifmg.edu.br/governadorvaladares/ensino/horarios-de-aulas/tecnicos/quadro-de-horarios-tecnicos-integrados-ano-atual.pdf/view",
-            caption : "Clique aqui para acessar o portal do IFMG"
+            content : "http://llfmaia.github.io/assets/downloadable_files/horario.pdf",
+            caption : "Clique aqui para visualizar o horário "
         },
         download: {
             "link" : "../assets/downloadable_files/horario.pdf",
             "caption" : "Clique aqui para baixar o horário",
             "file_name": "horario-2024"
-        }
+        },
+        
     },
     advisorMeeting: {
         text: "Para agendar uma reunião com seu orientador, use o sistema de agendamento online no site do IFMG.",
