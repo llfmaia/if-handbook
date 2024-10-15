@@ -171,12 +171,10 @@ function addMessage(response, className) {
     if (response.download) {
         const linkDiv = document.createElement("div")
         linkDiv.classList.add('message-link')
-
         const linkElement = document.createElement('a')
         linkElement.href = response.download.link
         linkElement.textContent = response.download.caption;  
         linkElement.download = response.download.file_name
-
         linkDiv.appendChild(linkElement);
         contentDiv.appendChild(linkDiv);
     }
